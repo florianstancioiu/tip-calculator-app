@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Space+Mono:700"
+    />
+
+    <link rel="stylesheet" href="./css/styles.css" />
+
+    <title>Frontend Mentor | Tip calculator app</title>
+  </head>
+  <body>
+    <main>
+      <img src="./images/logo.svg" alt="Logo" class="logo" />
+      <div class="card">
+        <div class="card-header">
+          <div class="bill-input-wrapper">
+            <label for="bill-input">Bill</label>
+            <div class="input-with-image">
+              <input id="bill-input" type="text" value="142.55" />
+              <img src="./images/icon-dollar.svg" alt="" />
+            </div>
+          </div>
+          <div class="select-tip-wrapper">
+            <p class="select-tip-title">Select Tip %</p>
+            <div class="select-tip-inner-wrapper">
+              <div class="select-tip-percentage" data-percentage="5">5%</div>
+              <div class="select-tip-percentage" data-percentage="10">10%</div>
+              <div class="select-tip-percentage active" data-percentage="15">
+                15%
+              </div>
+              <div class="select-tip-percentage" data-percentage="25">25%</div>
+              <div class="select-tip-percentage" data-percentage="50">50%</div>
+              <div class="select-tip-custom">
+                <input
+                  class="custom-tip-input"
+                  type="text"
+                  placeholder="Custom"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="number-of-people-wrapper">
+            <label for="number-of-people-input" class="title"
+              >Number of People</label
+            >
+            <div class="input-with-image">
+              <input id="number-of-people-input" type="text" value="5" />
+              <img src="./images/icon-person.svg" alt="" />
+            </div>
+          </div>
+        </div>
+        <div class="card-footer">
+          <div class="tip-amount-wrapper footer-section">
+            <div class="tip-amount-inner text">
+              <p class="title">Tip Amount</p>
+              <p class="sub-title">/ person</p>
+            </div>
+            <div class="tip-amount-value value">$4.27</div>
+          </div>
+
+          <div class="total-wrapper footer-section">
+            <div class="total-inner text">
+              <p class="title">Total</p>
+              <p class="sub-title">/ person</p>
+            </div>
+            <div class="total-value value">$32.79</div>
+          </div>
+
+          <button class="btn-reset">Reset</button>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
