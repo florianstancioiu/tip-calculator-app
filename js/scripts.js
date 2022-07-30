@@ -57,18 +57,28 @@ const calculateTip = () => {
   }
 
   const totalAmount = parseFloat((tipPercentage / 100) * billValue).toFixed(2);
-  const tipAmount = parseFloat(totalAmount / numberOfPeople);
+  const tipAmount = parseFloat(totalAmount / numberOfPeople).toFixed(2);
 
   tipAmountValue.innerHTML = `$${tipAmount}`;
   totalValue.innerHTML = `$${totalAmount}`;
 };
-/* 
-const biggerThanZero = (value) => {
+
+const isNumber = (value) => {
+  // Allow Exceptions
+  if (
+    value === "Backspace" ||
+    value === "ArrowLeft" ||
+    value === "ArrowRight"
+  ) {
+    return true;
+  }
+
   const regex = /^[0-9]+$/;
 
   return regex.test(value);
-}; */
+};
 
+// Calculate the tip
 billInput.addEventListener("keyup", (event) => {
   calculateTip();
 });
@@ -79,12 +89,19 @@ numberOfPeopleInput.addEventListener("keyup", (event) => {
   calculateTip();
 });
 
-/* billInput.addEventListener("keydown", (event) => {
-  console.log(biggerThanZero(event.target.value));
-
-  if (!biggerThanZero(event.target.value)) {
+// Prevent alphabetical characters from being entered
+billInput.addEventListener("keydown", (event) => {
+  if (!isNumber(event.key)) {
     event.preventDefault();
   }
 });
-customTipInput.addEventListener("keydown", (event) => {});
-numberOfPeopleInput.addEventListener("keydown", (event) => {}); */
+customTipInput.addEventListener("keydown", (event) => {
+  if (!isNumber(event.key)) {
+    event.preventDefault();
+  }
+});
+numberOfPeopleInput.addEventListener("keydown", (event) => {
+  if (!isNumber(event.key)) {
+    event.preventDefault();
+  }
+});
