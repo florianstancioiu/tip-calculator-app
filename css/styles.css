@@ -151,6 +151,7 @@ body {
   color: var(--white);
   padding: 6px 0;
   font-size: 24px;
+  cursor: pointer;
 }
 
 .select-tip-percentage.active {
@@ -218,6 +219,7 @@ body {
   border-radius: 5px;
   border: none;
   color: var(--very-dark-cyan);
+  cursor: pointer;
 }
 
 @media screen and (min-width: 921px) {
@@ -249,5 +251,9 @@ body {
   .logo {
     margin-top: 160px;
     margin-bottom: 90px;
+  }
+
+  .footer-section .value {
+    font-size: 38px;
   }
 }
