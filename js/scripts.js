@@ -58,9 +58,12 @@ const calculateTip = () => {
 
   const totalAmount = parseFloat((tipPercentage / 100) * billValue).toFixed(2);
   const tipAmount = parseFloat(totalAmount / numberOfPeople).toFixed(2);
+  const actualTotalAmount = parseFloat(
+    (billValue + parseFloat(totalAmount)) / numberOfPeople
+  ).toFixed(2);
 
   tipAmountValue.innerHTML = `$${tipAmount}`;
-  totalValue.innerHTML = `$${totalAmount}`;
+  totalValue.innerHTML = `$${actualTotalAmount}`;
 };
 
 const isNumber = (value) => {
@@ -68,7 +71,8 @@ const isNumber = (value) => {
   if (
     value === "Backspace" ||
     value === "ArrowLeft" ||
-    value === "ArrowRight"
+    value === "ArrowRight" ||
+    value === "."
   ) {
     return true;
   }
